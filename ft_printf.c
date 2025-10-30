@@ -6,7 +6,7 @@
 /*   By: raulp <raulp@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 14:42:12 by raulp             #+#    #+#             */
-/*   Updated: 2025/10/30 17:05:11 by raulp            ###   ########.fr       */
+/*   Updated: 2025/10/30 17:32:04 by raulp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ static void	ft_select_parameter(va_list va, char format, int *count)
 		ft_putchar_count('%',count);
 	else if((format == 'd') || (format =='i'))
 		ft_putnbr_fd(va_arg(va, int), 1, count);
-	else
-		ft_putchar_count(format,count);
+	else if(format == 'u')
+		ft_putnbr_fd_no_sign(va_arg(va, int), 1, count);
 }
 
 int	ft_printf(char const *str, ...)
@@ -58,14 +58,11 @@ int	ft_printf(char const *str, ...)
 /* 
 #include "ft_printf.h"
 #include <stdio.h>
-
 int main(void)
 {
     int ret1, ret2;
     char *ptr = "Hola";
-    
 	printf("ft_printf returned:\n");
-
     ret1 = ft_printf("c: %c, s: %s, p: %p, x: %x, X: %X, d: %d, i: %i, %%\n",
             'A', "raul", ptr, 255, 255, 42, -42);
 	printf("printf returned:\n");
@@ -77,4 +74,4 @@ int main(void)
 
     return 0;
 }
- */
+  */
