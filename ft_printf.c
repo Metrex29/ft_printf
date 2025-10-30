@@ -6,7 +6,7 @@
 /*   By: raulp <raulp@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 14:42:12 by raulp             #+#    #+#             */
-/*   Updated: 2025/10/30 15:59:38 by raulp            ###   ########.fr       */
+/*   Updated: 2025/10/30 17:05:11 by raulp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,16 +21,18 @@ static void	ft_select_parameter(va_list va, char format, int *count)
 	else if(format == 'p')
 		ft_putptr_count(va_arg(va, void *), count);
 	else if(format == 'x')
-		ft_puthex_min((unsigned long long)va_arg(va, void *),count);
+		ft_puthex_min((unsigned long long)va_arg(va, unsigned int), count);
 	else if(format == 'X')
-		ft_puthex_mayus((unsigned long long)va_arg(va, void *),count);
+		ft_puthex_mayus((unsigned long long)va_arg(va, unsigned int), count);
 	else if(format == '%')
 		ft_putchar_count('%',count);
-	else if(format == 'd' || format =='i')
+	else if((format == 'd') || (format =='i'))
 		ft_putnbr_fd(va_arg(va, int), 1, count);
+	else
+		ft_putchar_count(format,count);
 }
 
-int ft_printf(char const *str, ...)
+int	ft_printf(char const *str, ...)
 {
 	va_list		va;
 	int	char_count;
@@ -53,19 +55,26 @@ int ft_printf(char const *str, ...)
 	
 }
 
-/* #include <stdio.h>
-int main (void )
+/* 
+#include "ft_printf.h"
+#include <stdio.h>
+
+int main(void)
 {
-	char *str = "hola";
-	void *hol = str;
-	int ret1, ret2;
-	ret1 = ft_printf("s %s, c %c hex, %x HEX %X, ptr %p, %d %i \n", "raul" , 'a' , 10u, 14u, hol, 10 , 2);
-	ret2 = printf("s %s, c %c hex, %x HEX %X, ptr %p , %d %i \n", "raul", 'a', 10u, 14u, hol, 10 , 2);
-	
+    int ret1, ret2;
+    char *ptr = "Hola";
+    
+	printf("ft_printf returned:\n");
 
-printf("ft_printf returned: %d\n", ret1);
-printf("printf returned: %d\n", ret2);
+    ret1 = ft_printf("c: %c, s: %s, p: %p, x: %x, X: %X, d: %d, i: %i, %%\n",
+            'A', "raul", ptr, 255, 255, 42, -42);
+	printf("printf returned:\n");
+    ret2 = printf("c: %c, s: %s, p: %p, x: %x, X: %X, d: %d, i: %i, %%\n",
+            'A', "raul", ptr, 255, 255, 42, -42);
 
-	return 0;
+    printf("ft_printf returned: %d\n", ret1);
+    printf("printf returned: %d\n", ret2);
+
+    return 0;
 }
  */

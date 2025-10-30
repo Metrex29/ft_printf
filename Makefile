@@ -6,13 +6,13 @@
 #    By: raulp <raulp@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/28 14:27:26 by raulp             #+#    #+#              #
-#    Updated: 2025/10/30 16:06:37 by raulp            ###   ########.fr        #
+#    Updated: 2025/10/30 16:30:53 by raulp            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 
-NAME    = libftprint.a
+NAME    = libftprintf.a
 
 CC      = cc
 CFLAGS  = -Wall -Wextra -Werror
