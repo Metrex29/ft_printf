@@ -1,22 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   original_printf.c                                  :+:      :+:    :+:   */
+/*   ft_puthex.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: raulp <raulp@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/27 14:02:03 by raulp             #+#    #+#             */
-/*   Updated: 2025/10/28 14:39:32 by raulp            ###   ########.fr       */
+/*   Created: 2025/10/30 12:28:39 by raulp             #+#    #+#             */
+/*   Updated: 2025/10/30 15:28:04 by raulp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ft_printf.h"
 
-#include <stdio.h>
-
-int	main()
+void ft_puthex_min(unsigned long long n, int *counter)
 {
-	char nombre[]= "Raul";
-	int edad = 21;
-	printf("hola, me llamo %s tengo %d", nombre, edad);
-	return 0;
+	char *char_hex = "0123456789abcdef";
+
+	if(n >= 16)
+		ft_puthex_min(n/16, counter);
+	ft_putchar_count(char_hex[n % 16], counter);
+	
+}
+
+void ft_puthex_mayus(unsigned long long n, int *counter)
+{
+	char *char_hex = "0123456789ABCDEF";
+	
+	if(n >= 16)
+		ft_puthex_mayus(n / 16,counter);
+	ft_putchar_count(char_hex[n % 16], counter);
+	
 }
