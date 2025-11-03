@@ -6,7 +6,7 @@
 /*   By: raulp <raulp@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 14:42:12 by raulp             #+#    #+#             */
-/*   Updated: 2025/10/30 17:32:04 by raulp            ###   ########.fr       */
+/*   Updated: 2025/11/03 12:23:10 by raulp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static void	ft_select_parameter(va_list va, char format, int *count)
 	else if((format == 'd') || (format =='i'))
 		ft_putnbr_fd(va_arg(va, int), 1, count);
 	else if(format == 'u')
-		ft_putnbr_fd_no_sign(va_arg(va, int), 1, count);
+		ft_putnbr_fd_no_sign(va_arg(va, unsigned int), 1, count);
 }
 
 int	ft_printf(char const *str, ...)
@@ -55,23 +55,15 @@ int	ft_printf(char const *str, ...)
 	
 }
 
-/* 
-#include "ft_printf.h"
+/* #include "ft_printf.h"
 #include <stdio.h>
 int main(void)
 {
-    int ret1, ret2;
-    char *ptr = "Hola";
+ 	printf("printf returned:");
+	printf("p: %p", (void *)0);
+
+	
 	printf("ft_printf returned:\n");
-    ret1 = ft_printf("c: %c, s: %s, p: %p, x: %x, X: %X, d: %d, i: %i, %%\n",
-            'A', "raul", ptr, 255, 255, 42, -42);
-	printf("printf returned:\n");
-    ret2 = printf("c: %c, s: %s, p: %p, x: %x, X: %X, d: %d, i: %i, %%\n",
-            'A', "raul", ptr, 255, 255, 42, -42);
-
-    printf("ft_printf returned: %d\n", ret1);
-    printf("printf returned: %d\n", ret2);
-
+    ft_printf("p: %p", (void *)0);
     return 0;
-}
-  */
+} */

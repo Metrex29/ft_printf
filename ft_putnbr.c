@@ -6,7 +6,7 @@
 /*   By: raulp <raulp@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/09 13:53:56 by raulp             #+#    #+#             */
-/*   Updated: 2025/10/30 17:30:56 by raulp            ###   ########.fr       */
+/*   Updated: 2025/11/03 12:23:57 by raulp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,14 +38,12 @@ void	ft_putnbr_fd(int n, int fd, int *counter)
 	ft_putchar_count(c, counter);
 }
 
-void	ft_putnbr_fd_no_sign(int n, int fd, int *counter)
+void	ft_putnbr_fd_no_sign(unsigned int n, int fd, int *counter)
 {
 	char c;
 
-	(void)fd;
-
 	if (n >= 10)
-		ft_putnbr_fd(n / 10, fd, counter);
+		ft_putnbr_fd_no_sign(n/ 10, fd, counter);
 	c = n % 10 + '0';
 	ft_putchar_count(c, counter);
 }

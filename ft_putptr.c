@@ -19,11 +19,17 @@
     ft_putchar_count("0123456789abcdef"[n % 16], counter);
 } */
 
-	char	*ft_putptr_count(void *p, int *counter)
+void	ft_putptr_count(void *p, int *counter)
+{
+	unsigned long long	p1;
+	if (p == 0)
 	{
-		write(1,"0x",2);
-		*counter += 2;
-		unsigned long long p1 =  (unsigned long long)p;
-		ft_puthex_min(p1,counter);	
-		return NULL;
+		write(1, "(nil)", 5);
+		*counter += 5;
+		return ;
 	}
+	p1 = (unsigned long long)p;
+	write(1,"0x",2);
+	*counter += 2;
+	ft_puthex_min(p1,counter);	
+}

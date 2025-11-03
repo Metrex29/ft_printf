@@ -6,14 +6,14 @@
 /*   By: raulp <raulp@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 16:31:51 by raulp             #+#    #+#             */
-/*   Updated: 2025/10/30 11:46:35 by raulp            ###   ########.fr       */
+/*   Updated: 2025/11/03 10:50:31 by raulp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putchar_count(char c, int *counter)
+void	ft_putchar_count(char c, int *counter)
 {
 	write(1,&c,1);
-	return (*counter)++;
+	(*counter)++;
 }
