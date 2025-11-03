@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: raulp <raulp@student.42.fr>                +#+  +:+       +#+        */
+/*   By: cpicon-m <cpicon-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 16:31:51 by raulp             #+#    #+#             */
-/*   Updated: 2025/11/03 10:50:31 by raulp            ###   ########.fr       */
+/*   Updated: 2025/11/03 14:13:49 by cpicon-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 void	ft_putchar_count(char c, int *counter)
 {
-	write(1,&c,1);
+	write (1, &c, 1);
 	(*counter)++;
 }

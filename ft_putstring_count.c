@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstring_count.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: raulp <raulp@student.42.fr>                +#+  +:+       +#+        */
+/*   By: cpicon-m <cpicon-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 11:23:08 by raulp             #+#    #+#             */
-/*   Updated: 2025/11/03 10:48:37 by raulp            ###   ########.fr       */
+/*   Updated: 2025/11/03 14:11:51 by cpicon-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,15 @@
 
 void	ft_putstring_count(char *str, int *counter)
 {
-	int i;
+	int	i;
+
 	i = 0;
-	if(!str)
+	if (!str)
 		str = "(null)";
-	while(str[i])
+	while (str[i])
 	{
-		write(1,&str[i],1);
+		write (1, &str[i], 1);
 		i++;
 		(*counter)++;
 	}
 }
-
-
-
